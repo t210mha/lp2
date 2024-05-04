@@ -1,8 +1,138 @@
 @charset "UTF-8";
-/* 共通 ここから */
-/* 共通 ここまで */
-/* #cover ここから */
-/* #cover ここまで */
+
+/* ---------------------------------
+    共通 ここから
+--------------------------------- */
+span {
+    display: inline-block;
+}
+
+* {
+    outline: 1px solid red;
+}
+
+/* ---------------------------------
+    共通 ここまで
+--------------------------------- */
+/* ---------------------------------
+    #cover ここから
+--------------------------------- */
+.cover {
+    height: 115.3846153846vw;
+    background-image: url("/assets/image/main_visual_sp_01.jpg");
+    background-size: cover;
+    background-position: center top;
+}
+
+@media screen and (min-width: 768px) {
+    .cover {
+        width: 100vw;
+        height: min(60vw, 45rem);
+        background-image: url("/assets/image/main_visual_pc_01.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.cover__inner {
+    margin: 0 4.1025641026vw;
+}
+
+@media screen and (min-width: 768px) {
+    .cover__inner {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .cover__inner {
+        margin-left: calc((100vw - 1200px) / 2);
+        margin-right: calc((100vw - 1200px) / 2);
+    }
+}
+
+.cover__top {
+    padding-top: 6.1538461538vw;
+}
+
+@media screen and (min-width: 768px) {
+    .cover__top {
+        padding-top: min(2.6666666667vw, 2rem);
+    }
+}
+
+.cover__head {
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6.1538461538vw;
+    line-height: 1.25;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .cover__head {
+        font-size: min(2.3333333333vw, 1.75rem);
+        line-height: 1.25;
+    }
+}
+
+.cover__middle {
+    margin-top: 93.3333333333vw;
+    width: 87.9487179487vw;
+    height: 35.641025641vw;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .cover__middle {
+        margin-top: min(17.0833333333vw, 12.8125rem);
+        margin-left: min(6.0833333333vw, 4.5625rem);
+        width: min(30.3333333333vw, 22.75rem);
+        height: min(14.75vw, 11.0625rem);
+    }
+}
+
+.cover__title {
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10.5128205128vw;
+    line-height: 1.243902439;
+    letter-spacing: 0.3em;
+    text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+    .cover__title {
+        font-size: min(4.1666666667vw, 3.125rem);
+        line-height: 1.36;
+    }
+}
+
+.cover__text {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5.1282051282vw;
+    text-align: left;
+    letter-spacing: 0.3em;
+    margin-top: 2.0512820513vw;
+}
+
+@media screen and (min-width: 768px) {
+    .cover__text {
+        font-size: min(2.0833333333vw, 1.5625rem);
+        line-height: 1.44;
+        margin-top: min(0.8333333333vw, 0.625rem);
+    }
+}
+
+/* ---------------------------------
+    #cover ここまで
+--------------------------------- */
 /* #shopping1 ここから */
 /* #shopping1 ここまで */
 /* #concept ここから */
@@ -14,4 +144,5 @@
 /* #shopping2 ここから */
 /* #shopping2 ここまで */
 /* #footer ここから */
-/* #footer ここまで *//*# sourceMappingURL=main.css.map */
+/* #footer ここまで */
+/*# sourceMappingURL=main.css.map */

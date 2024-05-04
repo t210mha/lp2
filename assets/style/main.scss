@@ -1,23 +1,30 @@
 @charset "UTF-8";
 
-/* 共通 ここから */
+/* ---------------------------------
+    共通 ここから
+--------------------------------- */
+// 定数 font-weight
 $regular: 400;
 $medium: 500;
 $semibold: 600;
 $bold: 700;
 
+// フォント設定
+// ベースフォント
 @mixin baseFont($weight: $regular) {
     font-family: "Noto Serif JP", serif;
     font-weight: $weight;
     font-style: normal;
 }
 
+// 英字用フォント
 @mixin alphabetFont($weight: $regular) {
     font-family: "Marcellus", serif;
     font-weight: $weight;
     font-style: normal;
 }
 
+// セクションタイトル用フォント
 @mixin sectionTitleFont($weight: $bold) {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
@@ -25,41 +32,179 @@ $bold: 700;
     font-style: normal;
 }
 
-// $eb-garamond-bold {
-//     font-family: "EB Garamond", serif;
-//     font-optical-sizing: auto;
-//     font-weight: 700;
-//     font-style: normal;
-// }
+// 単位変換関数
+// SP用ブラウザ幅連動
+@function vw($px) {
+    @return calc($px * 100vw / 390); // 390pxはカンプの幅を記述
+}
 
-// .marcellus-regular {
-//     font-family: "Marcellus", serif;
-//     font-weight: 400;
-//     font-style: normal;
-// }
+// PC用ブラウザ幅連動
+// ヘッダー・カバーなどブラウザ幅一杯のコンテンツ用
+@function vwPC($px) {
+    @return calc($px * 100vw / 1500); // 1500pxはカンプの幅を記述
+}
 
-// .noto-serif-jp-regular {
-//     font-family: "Noto Serif JP", serif;
-//     font-weight: 400;
-//     font-style: normal;
-// }
+@function px2Rem($px) {
+    @return calc($px / 16) * 1rem;
+}
 
-// .noto-serif-jp-medium {
-//     font-family: "Noto Serif JP", serif;
-//     font-weight: 500;
-//     font-style: normal;
-// }
+// 下記でmin/max関数をScssの関数ではなくcssの関数として出力するためのラッパー
+@function min($values...) {
+    @return unquote('min(#{$values})');
+}
 
-// .noto-serif-jp-semibold {
-//     font-family: "Noto Serif JP", serif;
-//     font-weight: 600;
-//     font-style: normal;
-// }
+@function max($values...) {
+    @return unquote('max(#{$values})');
+}
 
-/* 共通 ここまで */
+// PC用途中までブラウザ幅連動。$pxより大きくなったら$pxにする関数
+// マイナスの値も対応。
+@function mvw($px) {
+    // 1200pxはカンプ幅ではなくコンテンツ幅(コンテンツ左右のガイド線間の幅 + 少し余白)
+    $value1: calc($px * 100vw / 1200);
+    $value2: px2Rem($px);
 
-/* #cover ここから */
-/* #cover ここまで */
+    @if $px >=0 {
+        @return min($value1, $value2);
+    }
+
+    @else {
+        @return max($value1, $value2);
+    }
+}
+
+// メディアクエリ
+// ブレイクポイントの設定
+$breakpoints: (
+    "md": "screen and (min-width: 768px)",
+    "lg": "screen and (min-width: 1200px)"
+
+    ) !default;
+
+// メディアクエリのmixin
+@mixin mq($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+// PC表示コンテンツ幅(1200px)以上の場合の左右の余白
+$pcMargin: calc((100vw - 1200px) / 2
+);
+
+// 自動改行のための設定
+span {
+    display: inline-block;
+}
+
+* {
+    outline: 1px solid red;
+}
+
+/* ---------------------------------
+    共通 ここまで
+--------------------------------- */
+
+/* ---------------------------------
+    #cover ここから
+--------------------------------- */
+
+.cover {
+    height: vw(450);
+    background-image: url("/assets/image/main_visual_sp_01.jpg");
+    background-size: cover;
+    background-position: center top;
+
+    @include mq(md) {
+        width: vwPC(1500);
+        height: mvw(720);
+        background-image: url("/assets/image/main_visual_pc_01.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+
+.cover__inner {
+    margin: 0 vw(16);
+
+    @include mq(md) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @include mq(lg) {
+        margin-left: $pcMargin;
+        margin-right: $pcMargin;
+    }
+
+}
+
+.cover__top {
+    padding-top: vw(24);
+
+    @include mq(md) {
+        padding-top: mvw(32);
+    }
+}
+
+.cover__head {
+    @include alphabetFont;
+    font-size: vw(24);
+    line-height: calc(30/24);
+    letter-spacing: 0.2em;
+    text-align: center;
+
+    @include mq(md) {
+        font-size: mvw(28);
+        line-height: calc(35/28);
+    }
+}
+
+.cover__middle {
+    margin-top: vw(364);
+    width: vw(343);
+    height: vw(139);
+    align-items: center;
+
+    @include mq(md) {
+        margin-top: mvw(205);
+        margin-left: mvw(73);
+        width: mvw(364);
+        height: mvw(177);
+    }
+}
+
+.cover__title {
+    @include alphabetFont;
+    font-size: vw(41);
+    line-height: calc(51/41);
+    letter-spacing: 0.3em;
+    text-align: left;
+
+    @include mq(md) {
+        font-size: mvw(50);
+        line-height: calc(68/50);
+    }
+}
+
+.cover__text {
+    @include baseFont();
+    font-size: vw(20);
+    text-align: left;
+    letter-spacing: 0.3em;
+    margin-top: vw(8);
+
+    @include mq(md) {
+        font-size: mvw(25);
+        line-height: calc(36/25);
+        margin-top: mvw(10);
+    }
+}
+
+/* ---------------------------------
+    #cover ここまで
+--------------------------------- */
 
 /* #shopping1 ここから */
 /* #shopping1 ここまで */
