@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* 共通 ここから */
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+
+@mixin baseFont($weight: $regular) {
+    font-family: "Noto Serif JP", serif;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+@mixin alphabetFont($weight: $regular) {
+    font-family: "Marcellus", serif;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+@mixin sectionTitleFont($weight: $bold) {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+// $eb-garamond-bold {
+//     font-family: "EB Garamond", serif;
+//     font-optical-sizing: auto;
+//     font-weight: 700;
+//     font-style: normal;
+// }
+
+// .marcellus-regular {
+//     font-family: "Marcellus", serif;
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// .noto-serif-jp-regular {
+//     font-family: "Noto Serif JP", serif;
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// .noto-serif-jp-medium {
+//     font-family: "Noto Serif JP", serif;
+//     font-weight: 500;
+//     font-style: normal;
+// }
+
+// .noto-serif-jp-semibold {
+//     font-family: "Noto Serif JP", serif;
+//     font-weight: 600;
+//     font-style: normal;
+// }
+
+/* 共通 ここまで */
+
+/* #cover ここから */
+/* #cover ここまで */
+
+/* #shopping1 ここから */
+/* #shopping1 ここまで */
+
+/* #concept ここから */
+/* #concept ここまで */
+
+/* #voices ここから */
+/* #voices ここまで */
+
+/* #qa ここから */
+/* #qa ここまで */
+
+/* #shopping2 ここから */
+/* #shopping2 ここまで */
+
+/* #footer ここから */
+/* #footer ここまで */
