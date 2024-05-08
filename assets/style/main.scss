@@ -77,8 +77,8 @@ $bold: 700;
 // ブレイクポイントの設定
 $breakpoints: (
     "md": "screen and (min-width: 768px)",
-    "lg": "screen and (min-width: 1200px)"
-
+    "lg": "screen and (min-width: 1200px)",
+    "xl": "screen and (min-width: 1500px)"
     ) !default;
 
 // メディアクエリのmixin
@@ -92,11 +92,38 @@ $breakpoints: (
 $pcMargin: calc((100vw - 1200px) / 2
 );
 
+// スムーススクロール
+html {
+    scroll-behavior: smooth;
+}
+
+// トップへ戻るボタンのための設定
+body {
+    position: relative;
+}
+
 // 自動改行のための設定
 span {
     display: inline-block;
 }
 
+// リンクのデコレーションを消す
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+// リストのスタイルをリセット
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+// フレーム確認用
 * {
     outline: 1px solid red;
 }
@@ -108,12 +135,12 @@ span {
 /* ---------------------------------
     #cover ここから
 --------------------------------- */
-
 .cover {
-    height: vw(450);
+    height: vw(557);
     background-image: url("/assets/image/main_visual_sp_01.jpg");
-    background-size: cover;
+    background-size: vw(390) vw(450);
     background-position: center top;
+    padding: vw(24) vw(16) 0;
 
     @include mq(md) {
         width: vwPC(1500);
@@ -121,12 +148,23 @@ span {
         background-image: url("/assets/image/main_visual_pc_01.jpg");
         background-size: cover;
         background-position: center;
+        padding: vwPC(32) 0;
+
+    }
+
+    @include mq(xl) {
+        width: vwPC(1500);
+        height: vwPC(720);
+        background-image: url("/assets/image/main_visual_pc_01.jpg");
+        background-size: 100% auto;
+        background-position: center top;
+        padding: vwPC(32) 0;
     }
 }
 
-
 .cover__inner {
-    margin: 0 vw(16);
+    display: flex;
+    flex-direction: column;
 
     @include mq(md) {
         margin-left: 0;
@@ -138,34 +176,28 @@ span {
         margin-right: $pcMargin;
     }
 
-}
-
-.cover__top {
-    padding-top: vw(24);
-
-    @include mq(md) {
-        padding-top: mvw(32);
+    @include mq(xl) {
+        margin-left: px2Rem(150);
+        margin-right: px2Rem(150);
     }
 }
 
-.cover__head {
-    @include alphabetFont;
-    font-size: vw(24);
-    line-height: calc(30/24);
-    letter-spacing: 0.2em;
-    text-align: center;
+.cover__logo {
+    width: vw(143);
+    height: vw(30);
+    margin: 0 auto;
 
     @include mq(md) {
-        font-size: mvw(28);
-        line-height: calc(35/28);
+        width: vwPC(166);
+        height: vwPC(35);
+        margin: 0 auto;
     }
 }
 
-.cover__middle {
+.product {
     margin-top: vw(364);
     width: vw(343);
     height: vw(139);
-    align-items: center;
 
     @include mq(md) {
         margin-top: mvw(205);
@@ -173,9 +205,17 @@ span {
         width: mvw(364);
         height: mvw(177);
     }
+
+    @include mq(xl) {
+        margin-top: vwPC(205);
+        margin-left: vwPC(73);
+        width: vwPC(364);
+        height: vwPC(177);
+
+    }
 }
 
-.cover__title {
+.product__name {
     @include alphabetFont;
     font-size: vw(41);
     line-height: calc(51/41);
@@ -186,9 +226,14 @@ span {
         font-size: mvw(50);
         line-height: calc(68/50);
     }
+
+    @include mq(xl) {
+        font-size: vwPC(50);
+        line-height: calc(68/50);
+    }
 }
 
-.cover__text {
+.product__text {
     @include baseFont();
     font-size: vw(20);
     text-align: left;
@@ -200,26 +245,674 @@ span {
         line-height: calc(36/25);
         margin-top: mvw(10);
     }
+
+    @include mq(xl) {
+        font-size: vwPC(25);
+        line-height: calc(36/25);
+        margin-top: vwPC(10);
+    }
 }
 
 /* ---------------------------------
     #cover ここまで
 --------------------------------- */
 
-/* #shopping1 ここから */
-/* #shopping1 ここまで */
+/* ---------------------------------
+    #cta ここから
+--------------------------------- */
+.cta {
+    margin: vw(50) vw(16);
+
+    @include mq(md) {
+        margin: mvw(48) mvw(100);
+    }
+
+    @include mq(lg) {
+        margin: mvw(48) calc($pcMargin + mvw(100));
+    }
+}
+
+.cta__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: vw(20);
+    padding-top: vw(20);
+    padding-bottom: vw(20);
+    background-color: #F0F4FF;
+
+    @include mq(md) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: mvw(40) mvw(48);
+    }
+}
+
+.cta__product-title {
+    @include baseFont;
+    font-size: vw(18);
+    letter-spacing: 0.1em;
+    text-align: center;
+
+    @include mq(md) {
+        font-size: mvw(24);
+    }
+}
+
+.cta__product-price {
+    @include baseFont;
+    font-size: vw(14);
+    text-align: center;
+    margin-top: vw(5);
+
+    @include mq(md) {
+        font-size: mvw(16);
+        margin-top: mvw(8);
+    }
+}
+
+.cta__btn {
+    @include baseFont($semibold);
+    font-size: vw(18);
+    text-align: center;
+    width: vw(300);
+    padding: vw(16) vw(60);
+    border-radius: vw(34);
+    color: #FFF;
+
+    @include mq(md) {
+        font-size: mvw(18);
+        width: mvw(300);
+        padding: mvw(16) mvw(58);
+        border-radius: mvw(34);
+    }
+
+    &--online {
+        @extend .cta__btn;
+        background-color: #46C4DB;
+    }
+
+    &--online:hover {
+        border: #46C4DB solid 2px;
+        padding: vw(16) vw(56);
+        background-color: #FFF;
+        color: #46C4DB;
+
+        @include mq(md) {
+            padding: mvw(14) mvw(56);
+        }
+    }
+
+    &--purchase {
+        @extend .cta__btn;
+        background-color: #5DD5AB;
+    }
+
+    &--purchase:hover {
+        border: #5DD5AB solid 2px;
+        padding: vw(16) vw(56);
+        background-color: #FFF;
+        color: #5DD5AB;
+
+        @include mq(md) {
+            padding: mvw(14) mvw(56);
+        }
+    }
+}
+
+/* #cta ここまで */
 
 /* #concept ここから */
+.concept {
+    width: vw(390);
+    height: vw(680);
+    background-image: url("/assets/image/concept_sp_01.jpg");
+    background-position: center;
+    background-size: cover;
+
+    @include mq(md) {
+        width: vwPC(1500);
+        height: mvw(550);
+        background-image: url("/assets/image/concept_pc_01.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: mvw(127) mvw(54);
+    }
+
+    @include mq(lg) {
+        width: vwPC(1500);
+        height: mvw(550);
+        background-image: url("/assets/image/concept_pc_01.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: mvw(127) calc($pcMargin + mvw(54));
+    }
+}
+
+.concept__inner {
+    padding: vw(48) vw(16);
+
+    @include mq(md) {
+        padding: 0 0 0 mvw(625);
+        width: mvw(1092);
+    }
+}
+
+.concept__title-en {
+    @include sectionTitleFont;
+    font-size: vw(30);
+    text-align: center;
+    color: #FFF;
+
+    @include mq(md) {
+        font-size: mvw(38);
+        text-align: left;
+    }
+}
+
+.concept__title-jp {
+    @include baseFont($semibold);
+    font-size: vw(24);
+    text-align: center;
+    color: #FFF;
+    margin-top: vw(8);
+
+    @include mq(md) {
+        font-size: mvw(24);
+        margin-top: mvw(8);
+        text-align: left;
+    }
+}
+
+.concept__text {
+    @include baseFont;
+    font-size: vw(14);
+    line-height: calc(32/14);
+    color: #FFF;
+    margin-top: vw(20);
+
+    @include mq(md) {
+        font-size: mvw(14);
+        line-height: calc(32/14);
+        margin-top: mvw(24);
+        margin-right: mvw(38);
+    }
+}
+
 /* #concept ここまで */
 
 /* #voices ここから */
+.voices {
+    height: vw(571);
+    margin-left: vw(16);
+    margin-right: vw(16);
+
+    @include mq(md) {
+        height: mvw(556);
+        margin: 0 mvw(22);
+    }
+
+    @include mq(lg) {
+        margin: 0 calc($pcMargin + mvw(22));
+    }
+}
+
+.voices__inner {
+    margin-top: vw(50);
+    margin-bottom: vw(50);
+
+    @include mq(md) {
+        margin-top: mvw(80);
+        margin-bottom: mvw(80);
+    }
+}
+
+.voices__title-en {
+    @include sectionTitleFont;
+    font-size: vw(30);
+    text-align: center;
+    clear: #000;
+
+    @include mq(md) {
+        font-size: mvw(45);
+    }
+}
+
+.voices__title-jp {
+    @include baseFont($semibold);
+    font-size: vw(16);
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-top: vw(4);
+
+    @include mq(md) {
+        font-size: mvw(20);
+        margin-top: mvw(8);
+    }
+}
+
+.voices__list {
+    margin-top: vw(36);
+    margin-left: vw(39);
+    margin-right: vw(39);
+
+    @include mq(md) {
+        margin-top: mvw(40);
+        margin-left: mvw(78);
+        margin-right: mvw(78);
+    }
+}
+
+.voices__item {
+    background-color: #DBF7F9;
+
+    @include mq(md) {
+        margin-left: mvw(20);
+        margin-right: mvw(20);
+    }
+}
+
+.voices__photo {
+    margin: vw(28) vw(95) 0 vw(105);
+    width: vw(80);
+    height: vw(80);
+    align-items: center;
+    border-radius: vw(40);
+
+    @include mq(md) {
+        margin: mvw(40) mvw(100) 0;
+        width: mvw(100);
+        height: mvw(100);
+        border-radius: mvw(50);
+    }
+}
+
+.voices__name {
+    @include baseFont;
+    font-size: vw(14);
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-top: vw(8);
+
+    @include mq(md) {
+        font-size: mvw(15);
+        margin-top: mvw(8);
+    }
+}
+
+.voices__text {
+    @include baseFont;
+    font-size: vw(14);
+    line-height: 2;
+    margin: vw(20) vw(15.5) vw(28);
+
+    @include mq(md) {
+        font-size: mvw(16);
+        line-height: calc(28/16);
+        margin: mvw(16) mvw(16) mvw(40);
+    }
+}
+
+.slick-prev,
+.slick-next {
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    height: vw(32);
+    width: vw(32);
+    color: #00AFBF;
+
+    @include mq(md) {
+        height: mvw(48);
+        width: mvw(48);
+    }
+}
+
+.slick-prev {
+    left: vw(-39);
+
+    @include mq(md) {
+        left: mvw(-62);
+    }
+}
+
+.slick-next {
+    right: vw(-39);
+
+    @include mq(md) {
+        right: mvw(-62);
+    }
+}
+
+.slick-dots {
+    width: 100%;
+    text-align: center;
+    margin-top: vw(16);
+
+    @include mq(md) {
+        margin: mvw(24) auto 0;
+    }
+
+    li {
+        height: vw(9);
+        width: vw(9);
+        margin: 0 vw(4);
+        padding: 0;
+        border-radius: 100%;
+        cursor: pointer;
+
+        @include mq(md) {
+            height: mvw(9);
+            // width: mvw(26);
+            margin: 0 mvw(8);
+        }
+
+        button {
+            cursor: pointer;
+            color: transparent;
+        }
+
+        button::before {
+            font-size: vw(9);
+
+            @include mq(md) {
+                font-size: mvw(9);
+            }
+        }
+
+        button:hover,
+        button:focus {
+            outline: none;
+        }
+    }
+
+    li.slick-active button:before {
+        color: #00AFBF;
+    }
+}
+
 /* #voices ここまで */
 
-/* #qa ここから */
-/* #qa ここまで */
+/* #faq ここから */
+.faq {
+    background: -moz-linear-gradient(left, #F4FFE8, #C6F0FE);
+    background: -webkit-linear-gradient(left, #F4FFE8, #C6F0FE);
+    background: linear-gradient(to right, #F4FFE8, #C6F0FE);
+}
 
-/* #shopping2 ここから */
-/* #shopping2 ここまで */
+.faq__inner {
+    padding: vw(32) vw(16);
+
+    @include mq(md) {
+        padding: mvw(40) mvw(300);
+    }
+
+    @include mq(lg) {
+        padding: mvw(40) calc($pcMargin + mvw(300));
+    }
+}
+
+.faq__title-en {
+    @include sectionTitleFont;
+    font-size: vw(30);
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #000;
+
+    @include mq(md) {
+        font-size: mvw(45);
+    }
+}
+
+.faq__title-jp {
+    @include baseFont($semibold);
+    font-size: vw(16);
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #000;
+    margin-top: vw(4);
+
+    @include mq(md) {
+        font-size: mvw(20);
+        margin-top: mvw(8);
+    }
+}
+
+.faq__list {
+    margin-top: vw(37);
+    margin-bottom: vw(33);
+
+    @include mq(md) {
+        margin-top: mvw(40);
+        margin-bottom: mvw(40);
+    }
+}
+
+.faq__item-question {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    row-gap: vw(20);
+    margin-top: vw(20);
+    padding: vw(20) vw(16);
+    background-color: #fff;
+    cursor: pointer;
+
+    @include mq(md) {
+        row-gap: mvw(24);
+        margin-top: mvw(40);
+        padding: mvw(24) mvw(24);
+    }
+}
+
+.faq__item-question-mark,
+.faq__item-answer-mark {
+    @include sectionTitleFont;
+    font-size: vw(16);
+    letter-spacing: 0.05em;
+
+    @include mq(md) {
+        font-size: mvw(18);
+
+    }
+}
+
+.faq__item-question-text,
+.faq__item-answer-text {
+    @include baseFont;
+    font-size: vw(15);
+    line-height: calc(28/15);
+    margin-left: vw(12);
+
+    @include mq(md) {
+        font-size: mvw(15);
+        line-height: calc(28/15);
+        margin-left: mvw(16);
+    }
+}
+
+.faq__item-question-text {
+    @include mq(md) {
+        width: mvw(491);
+    }
+}
+
+.faq__item-answer-text {
+    @include mq(md) {
+        width: mvw(518);
+    }
+}
+
+.faq__item-question-mark,
+.faq__item-question-text {
+    color: #444444;
+}
+
+.faq__item-answer-mark,
+.faq__item-answer-text {
+    color: #000000;
+}
+
+
+.faq__item-question>.faq__item-question-btn {
+    margin-top: vw(10);
+    margin-left: vw(16);
+    width: vw(12);
+    height: vw(7);
+    background-image: url("/assets/image/faq_down_01.svg");
+
+    @include mq(md) {
+        margin-top: mvw(9);
+        margin-left: mvw(1);
+        width: mvw(12);
+        height: mvw(8);
+    }
+}
+
+.faq__item-question.open>.faq__item-question-btn {
+    margin-top: vw(10);
+    margin-left: vw(16);
+    width: vw(10);
+    height: vw(6);
+    background-image: url("/assets/image/faq_up_01.svg");
+
+    @include mq(md) {
+        margin-top: mvw(9);
+        margin-left: mvw(1);
+        width: mvw(12);
+        height: mvw(8);
+    }
+}
+
+.faq__item-answer {
+    display: flex;
+    margin-bottom: vw(20);
+    padding: 0 vw(16) vw(33);
+    background-color: #fff;
+    cursor: pointer;
+
+    @include mq(md) {
+        margin-bottom: mvw(20);
+        padding: 0 mvw(24) mvw(24);
+    }
+
+    &--active {
+        @extend .faq__item-answer;
+        display: flex;
+    }
+}
+
+/* #faq ここまで */
 
 /* #footer ここから */
+.footer {
+    height: vw(165);
+    width: vw(390);
+    background-color: #0071CE;
+
+    @include mq(md) {
+        width: vwPC(1500);
+        height: mvw(104);
+    }
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: vw(23);
+    padding: vw(23) vw(45);
+
+    @include mq(md) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: mvw(32);
+    }
+
+    @include mq(lg) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: mvw(32) calc($pcMargin + mvw(32));
+    }
+}
+
+.footer__logo-link,
+.footer__logo-img {
+    width: vw(166);
+    height: vw(35);
+
+    @include mq(md) {
+        width: mvw(190);
+        height: mvw(40);
+    }
+}
+
+.footer__link-list {
+    display: flex;
+    column-gap: vw(30);
+
+    @include mq(md) {
+        column-gap: mvw(32);
+    }
+}
+
+.footer__link-item {
+    @include baseFont;
+    font-size: vw(12);
+    color: #FFF;
+
+    @include mq(md) {
+        font-size: mvw(14);
+    }
+}
+
+.footer__copyright {
+    @include baseFont;
+    font-size: vw(11);
+    color: #FFF;
+
+    @include mq(md) {
+        font-size: mvw(12);
+    }
+}
+
 /* #footer ここまで */
+
+/* #back-to-top ここから */
+#back-to-top {
+    position: fixed;
+    height: vw(40);
+    right: vw(16);
+    bottom: px2Rem(16);
+
+    @include mq(md) {
+        height: mvw(40);
+        right: mvw(40);
+        // bottom: mvw(16);
+    }
+
+    @include mq(lg) {
+        right: calc($pcMargin + mvw(40));
+    }
+}
+
+#back-to-top__link {
+    width: vw(40);
+    height: vw(40);
+}
+
+#back-to-top__img {
+    display: none;
+    width: vw(40);
+    height: vw(40);
+}
+
+/* #back-to-top ここまで */

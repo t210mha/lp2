@@ -20,6 +20,11 @@
 
         <!-- リセットCSS -->
         <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+
+        <!-- SlickのCSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
         <link href="/assets/style/main.css" rel="stylesheet">
     </head>
 
@@ -28,50 +33,185 @@
             <!-- カバー ここから-->
             <div class="cover">
                 <div class="cover__inner">
-                    <div class="cover__top">
-                        <p class="cover__head">Kira-meki</p>
-                    </div>
-                    <div class="cover__middle">
-                        <h1 class="cover__title"><span>Kirameki</span><span>Cream</span></h1>
-                        <p class="cover__text">肌のうるおい、煌めく。</p>
-                    </div>
+                    <img class="cover__logo" src="/assets/image/header_logo_01.svg" alt="Kira-meki">
+                    <h1 class="product">
+                        <p class="product__name"><span>Kirameki</span><span>Cream</span></p>
+                        <p class="product__text">肌のうるおい、煌めく。</p>
+                    </h1>
                 </div>
             </div>
             <!-- カバー ここまで-->
 
-            <!-- ショッピング1 ここから-->
-            <div class="shopping1">
+            <!-- Call To Action1 ここから-->
+            <div class="cta">
+                <div class="cta__inner">
+                    <div class="cta__product">
+                        <p class="cta__product-title">キラメキクリーム</p>
+                        <p class="cta__product-price">税込&nbsp;4,000円</p>
+                    </div>
+                    <a class="cta__btn--online" href="#">オンラインショップへ</a>
+                    <form method="post" action="/cart/" target="_self">
+                        <input type="submit" class="cta__btn--purchase" value="購入する">
+                    </form>
+                </div>
             </div>
-            <!-- ショッピング1 ここまで-->
+            <!-- Call To Action1 ここまで-->
 
             <!-- コンセプト ここから-->
             <div class="concept">
+                <div class="concept__inner">
+                    <h2>
+                        <p class="concept__title-en">Keep Your Skin Beautiful.</p>
+                        <p class="concept__title-jp">お肌を美しく保つ</p>
+                    </h2>
+                    <p class="concept__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                </div>
             </div>
             <!-- コンセプト ここまで-->
 
             <!-- お客様の声 ここから-->
             <div class="voices">
+                <div class="voices__inner">
+                    <h2>
+                        <p class="voices__title-en">Voices</p>
+                        <p class="voices__title-jp">お客様の声</p>
+                    </h2>
+                    <div class="voices__list">
+                        <div class="voices__item">
+                            <img class="voices__photo" src="/assets/image/voices_photo_01.jpg">
+                            <div class="voices__name">Aさん</div>
+                            <p class="voices__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                        </div>
+                        <div class="voices__item">
+                            <img class="voices__photo" src="/assets/image/voices_photo_02.jpg">
+                            <div class="voices__name">Bさん</div>
+                            <p class="voices__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                        </div>
+                        <div class="voices__item">
+                            <img class="voices__photo" src="/assets/image/voices_photo_03.jpg">
+                            <div class="voices__name">Cさん</div>
+                            <p class="voices__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                        </div>
+                        <div class="voices__item">
+                            <img class="voices__photo" src="/assets/image/voices_photo_04.jpg">
+                            <div class="voices__name">Dさん</div>
+                            <p class="voices__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                        </div>
+                        <div class="voices__item">
+                            <img class="voices__photo" src="/assets/image/voices_photo_05.jpg">
+                            <div class="voices__name">Eさん</div>
+                            <p class="voices__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                        </div>
+                        <div class="voices__item">
+                            <img class="voices__photo" src="/assets/image/voices_photo_06.jpg">
+                            <div class="voices__name">Fさん</div>
+                            <p class="voices__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- お客様の声 ここまで-->
 
             <!-- よくあるご質問 ここから-->
-            <div class="qa">
+            <div class="faq">
+                <div class="faq__inner">
+                    <h2>
+                        <p class="faq__title-en">Q&A</p>
+                        <p class="faq__title-jp">よくあるご質問</p>
+                    </h2>
+                    <dl class="faq__list">
+                        <dt class="faq__item-question open">
+                            <div class="faq__item-question-mark">Q.</div>
+                            <p class="faq__item-question-text">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                            <div class="faq__item-question-btn"></div>
+                        </dt>
+                        <dd class="faq__item-answer--active">
+                            <div class="faq__item-answer-mark">A.</div>
+                            <p class="faq__item-answer-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </dd>
+                        <dt class="faq__item-question">
+                            <div class="faq__item-question-mark">Q.</div>
+                            <p class="faq__item-question-text">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                            <div class="faq__item-question-btn"></div>
+                        </dt>
+                        <dd class="faq__item-answer">
+                            <div class="faq__item-answer-mark">A.</div>
+                            <p class="faq__item-answer-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </dd>
+                        <dt class="faq__item-question">
+                            <div class="faq__item-question-mark">Q.</div>
+                            <p class="faq__item-question-text">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                            <div class="faq__item-question-btn"></div>
+                        </dt>
+                        <dd class="faq__item-answer">
+                            <div class="faq__item-answer-mark">A.</div>
+                            <p class="faq__item-answer-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </dd>
+                        <dt class="faq__item-question">
+                            <div class="faq__item-question-mark">Q.</div>
+                            <p class="faq__item-question-text">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                            <div class="faq__item-question-btn"></div>
+                        </dt>
+                        <dd class="faq__item-answer">
+                            <div class="faq__item-answer-mark">A.</div>
+                            <p class="faq__item-answer-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </dd>
+                        <dt class="faq__item-question">
+                            <div class="faq__item-question-mark">Q.</div>
+                            <p class="faq__item-question-text">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                            <div class="faq__item-question-btn"></div>
+                        </dt>
+                        <dd class="faq__item-answer">
+                            <div class="faq__item-answer-mark">A.</div>
+                            <p class="faq__item-answer-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </dd>
+                    </dl>
+                </div>
             </div>
             <!-- よくあるご質問 ここまで-->
 
-            <!-- ショッピング2 ここから-->
-            <div class="shopping2">
+            <!-- Call To Action2 ここから-->
+            <div class="cta">
+                <div class="cta__inner">
+                    <div class="cta__product">
+                        <p class="cta__product-title">キラメキクリーム</p>
+                        <p class="cta__product-price">税込&nbsp;4,000円</p>
+                    </div>
+                    <a class="cta__btn--online" href="#">オンラインショップへ</a>
+                    <form method="post" action="/cart/" target="_self">
+                        <input type="submit" class="cta__btn--purchase" value="購入する">
+                    </form>
+                </div>
             </div>
-            <!-- ショッピング2 ここまで-->
+            <!-- Call To Action2 ここまで-->
         </main>
 
         <!-- フッター ここから -->
         <footer class="footer">
+            <div class="footer__inner">
+                <a href="#" class="footer__logo-link"><img class="footer__logo-img" src="/assets/image/footer_logo_01.svg" alt="Kira-meki"></a>
+                <ul class="footer__link-list">
+                    <li><a href="/company/" class="footer__link-item">会社概要</a></li>
+                    <li><a href="/privacy-policy/" class="footer__link-item">個人情報保護ポリシー</a></li>
+                    <li><a href="/contact/" class="footer__link-item">お問い合わせ</a></li>
+                </ul>
+                <small class="footer__copyright">&copy; 2023 Kira-meki Inc. All rights reserved.</small>
+            </div>
         </footer>
         <!-- フッター ここまで -->
 
+        <!-- ページトップ ここから -->
+        <div id="back-to-top">
+            <a class="back-to-top__link" href="#">
+                <img class="back-to-top__img" src="/assets/image/back_to_top_01.png" onmouseover="this.src='/assets/image/back_to_top_02.png'" onmouseout="this.src='/assets/image/back_to_top_01.png'" alt>
+            </a>
+        </div>
+        <!-- ページトップ ここまで -->
+
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- SlickのJS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
         <script src="/assets/script/main.js"></script>
     </body>
 
