@@ -1,6 +1,4 @@
-// Slickリファレンス
-// https://kenwheeler.github.io/slick/
-
+// Slick
 $('.voices__list').slick({
     autoplay: false, // 自動再生
     arrows: true, // 左右のナビゲーションを無効
@@ -8,7 +6,6 @@ $('.voices__list').slick({
     fade: false, // フェードで切り替え
     slidesToShow: 3,
     slidesToScroll: 3,
-    // valiableWidth: true,
     prevArrow: '<img src="/assets/image/voices_arrow_left_circle_01.svg" class="slide-arrow slick-prev">',
     nextArrow: '<img src="/assets/image/voices_arrow_right_circle_01.svg" class="slide-arrow slick-next">',
     responsive: [
@@ -84,5 +81,4 @@ $(function () {
             });
         }
     });
-
 });

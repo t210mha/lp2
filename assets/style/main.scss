@@ -123,11 +123,6 @@ ul {
     margin: 0;
 }
 
-// フレーム確認用
-// * {
-//     outline: 1px solid red;
-// }
-
 /* ---------------------------------
     共通 ここまで
 --------------------------------- */
@@ -182,15 +177,22 @@ ul {
     }
 }
 
+.cover__link {
+    align-self: center;
+    height: vw(30);
+
+    @include mq(md) {
+        height: vwPC(35);
+    }
+}
+
 .cover__logo {
     width: vw(143);
     height: vw(30);
-    margin: 0 auto;
 
     @include mq(md) {
         width: vwPC(166);
         height: vwPC(35);
-        margin: 0 auto;
     }
 }
 
@@ -201,14 +203,14 @@ ul {
     height: vw(139);
 
     @include mq(md) {
-        margin-top: mvw(205);
+        margin-top: mvw(203);
         margin-left: mvw(73);
         width: mvw(364);
         height: mvw(177);
     }
 
     @include mq(xl) {
-        margin-top: vwPC(205);
+        margin-top: vwPC(203);
         margin-left: vwPC(73);
         width: vwPC(364);
         height: vwPC(177);
@@ -244,13 +246,13 @@ ul {
     @include mq(md) {
         font-size: mvw(25);
         line-height: calc(36/25);
-        margin-top: mvw(10);
+        margin-top: mvw(7);
     }
 
     @include mq(xl) {
         font-size: vwPC(25);
         line-height: calc(36/25);
-        margin-top: vwPC(10);
+        margin-top: vwPC(7);
     }
 }
 
@@ -273,6 +275,14 @@ ul {
     }
 }
 
+#cta2.cta {
+    margin-top: vw(50);
+
+    @include mq(md) {
+        margin-top: mvw(46);
+    }
+}
+
 .cta__inner {
     display: flex;
     flex-direction: column;
@@ -287,7 +297,7 @@ ul {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: cnter;
         padding: mvw(40) mvw(48);
     }
 }
@@ -312,6 +322,7 @@ ul {
 
     @include mq(md) {
         font-size: mvw(16);
+        text-align: left;
         margin-top: mvw(8);
     }
 }
@@ -335,6 +346,10 @@ ul {
     &--online {
         @extend .cta__btn;
         background-color: #46C4DB;
+
+        @include mq(md) {
+            margin-left: mvw(30);
+        }
     }
 
     &--online:hover {
@@ -344,6 +359,7 @@ ul {
         color: #46C4DB;
 
         @include mq(md) {
+            margin-left: mvw(30);
             padding: mvw(14) mvw(56);
         }
     }
@@ -439,7 +455,7 @@ ul {
     @include mq(md) {
         font-size: mvw(14);
         line-height: calc(32/14);
-        margin-top: mvw(24);
+        margin-top: mvw(18);
         margin-right: mvw(38);
     }
 }
@@ -453,7 +469,7 @@ ul {
     margin-right: vw(16);
 
     @include mq(md) {
-        height: mvw(556);
+        height: mvw(636);
         margin: 0 mvw(22);
     }
 
@@ -481,6 +497,7 @@ ul {
 
     @include mq(md) {
         font-size: mvw(45);
+        margin-left: mvw(3);
     }
 }
 
@@ -494,6 +511,7 @@ ul {
     @include mq(md) {
         font-size: mvw(20);
         margin-top: mvw(8);
+        margin-left: mvw(3);
     }
 }
 
@@ -504,8 +522,8 @@ ul {
 
     @include mq(md) {
         margin-top: mvw(40);
-        margin-left: mvw(78);
-        margin-right: mvw(78);
+        margin-left: mvw(74);
+        margin-right: mvw(74);
     }
 }
 
@@ -513,8 +531,10 @@ ul {
     background-color: #DBF7F9;
 
     @include mq(md) {
-        margin-left: mvw(20);
-        margin-right: mvw(20);
+        width: mvw(300);
+        height: mvw(388);
+        margin-left: mvw(18);
+        margin-right: mvw(18);
     }
 }
 
@@ -526,7 +546,7 @@ ul {
     border-radius: vw(40);
 
     @include mq(md) {
-        margin: mvw(40) mvw(100) 0;
+        margin: mvw(40) mvw(95) 0 mvw(100);
         width: mvw(100);
         height: mvw(100);
         border-radius: mvw(50);
@@ -542,7 +562,7 @@ ul {
 
     @include mq(md) {
         font-size: mvw(15);
-        margin-top: mvw(8);
+        margin-top: mvw(9);
     }
 }
 
@@ -555,7 +575,7 @@ ul {
     @include mq(md) {
         font-size: mvw(16);
         line-height: calc(28/16);
-        margin: mvw(16) mvw(16) mvw(40);
+        margin: mvw(16) mvw(18) mvw(40);
     }
 }
 
@@ -569,6 +589,7 @@ ul {
     color: #00AFBF;
 
     @include mq(md) {
+        top: 50%;
         height: mvw(48);
         width: mvw(48);
     }
@@ -578,7 +599,7 @@ ul {
     left: vw(-39);
 
     @include mq(md) {
-        left: mvw(-62);
+        left: mvw(-74);
     }
 }
 
@@ -586,7 +607,7 @@ ul {
     right: vw(-39);
 
     @include mq(md) {
-        right: mvw(-62);
+        right: mvw(-74);
     }
 }
 
@@ -595,7 +616,8 @@ ul {
     text-align: center;
 
     @include mq(md) {
-        margin: mvw(24) auto 0;
+        width: mvw(998);
+        height: mvw(18);
     }
 
     li {
@@ -607,9 +629,9 @@ ul {
         cursor: pointer;
 
         @include mq(md) {
-            height: mvw(9);
-            // width: mvw(26);
-            margin: 0 mvw(8);
+            height: mvw(10);
+            width: mvw(10);
+            margin: mvw(4) mvw(4);
         }
 
         button {
@@ -621,7 +643,7 @@ ul {
             font-size: vw(9);
 
             @include mq(md) {
-                font-size: mvw(9);
+                font-size: mvw(10);
             }
         }
 
@@ -655,11 +677,13 @@ ul {
     margin-bottom: vw(-2);
 
     @include mq(md) {
-        padding: mvw(40) mvw(300);
+        padding: mvw(40) mvw(300) mvw(1);
+        margin-bottom: mvw(-2);
     }
 
     @include mq(lg) {
-        padding: mvw(40) calc($pcMargin + mvw(300));
+        padding: mvw(40) calc($pcMargin + mvw(300)) mvw(3);
+        margin-bottom: 0;
     }
 }
 
@@ -708,15 +732,20 @@ ul {
     background-color: #fff;
     cursor: pointer;
 
+    @include mq(md) {
+        row-gap: mvw(20);
+        margin-top: mvw(24);
+        padding: mvw(24) mvw(24) mvw(19);
+    }
+
     &.open {
         @extend .faq__item-question;
         padding-bottom: vw(15);
-    }
 
-    @include mq(md) {
-        row-gap: mvw(24);
-        margin-top: mvw(40);
-        padding: mvw(24) mvw(24);
+        @include mq(md) {
+            margin-top: mvw(24);
+            padding: mvw(24) mvw(24) mvw(18);
+        }
     }
 }
 
@@ -734,6 +763,10 @@ ul {
 
 .faq__item-answer-mark {
     padding-top: vw(3);
+
+    @include mq(md) {
+        padding-top: mvw(3);
+    }
 }
 
 .faq__item-question-text {
@@ -788,10 +821,10 @@ ul {
     background-image: url("/assets/image/faq_down_01.svg");
 
     @include mq(md) {
-        margin-top: mvw(9);
-        margin-left: mvw(1);
+        margin-top: mvw(10);
+        margin-left: mvw(15);
         width: mvw(12);
-        height: mvw(8);
+        height: mvw(7);
     }
 }
 
@@ -803,10 +836,10 @@ ul {
     background-image: url("/assets/image/faq_up_01.svg");
 
     @include mq(md) {
-        margin-top: mvw(9);
-        margin-left: mvw(1);
+        margin-top: mvw(10);
+        margin-left: mvw(15);
         width: mvw(12);
-        height: mvw(8);
+        height: mvw(6);
     }
 }
 
@@ -819,7 +852,7 @@ ul {
 
     @include mq(md) {
         margin-bottom: mvw(20);
-        padding: 0 mvw(24) mvw(24);
+        padding: 0 mvw(24) mvw(18);
     }
 
     &--active {
@@ -883,6 +916,7 @@ ul {
     column-gap: vw(30);
 
     @include mq(md) {
+        margin-left: mvw(50);
         column-gap: mvw(32);
     }
 }
@@ -920,11 +954,10 @@ ul {
     @include mq(md) {
         height: mvw(40);
         right: mvw(40);
-        // bottom: mvw(16);
     }
 
     @include mq(lg) {
-        right: calc($pcMargin + mvw(40));
+        right: $pcMargin;
     }
 }
 
