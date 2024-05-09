@@ -28,10 +28,6 @@ ul {
   margin: 0;
 }
 
-* {
-  outline: 1px solid red;
-}
-
 /* ---------------------------------
     共通 ここまで
 --------------------------------- */
@@ -104,6 +100,7 @@ ul {
 
 .product {
   margin-top: 93.3333333333vw;
+  margin-left: 1.7948717949vw;
   width: 87.9487179487vw;
   height: 35.641025641vw;
 }
@@ -177,7 +174,7 @@ ul {
     #cta ここから
 --------------------------------- */
 .cta {
-  margin: 12.8205128205vw 4.1025641026vw;
+  margin: 12.8205128205vw 4.1025641026vw 12.8205128205vw;
 }
 @media screen and (min-width: 768px) {
   .cta {
@@ -197,7 +194,7 @@ ul {
   align-items: center;
   row-gap: 5.1282051282vw;
   padding-top: 5.1282051282vw;
-  padding-bottom: 5.1282051282vw;
+  padding-bottom: 8.7179487179vw;
   background-color: #F0F4FF;
 }
 @media screen and (min-width: 768px) {
@@ -229,6 +226,7 @@ ul {
   font-weight: 400;
   font-style: normal;
   font-size: 3.5897435897vw;
+  letter-spacing: 0.1em;
   text-align: center;
   margin-top: 1.2820512821vw;
 }
@@ -241,7 +239,7 @@ ul {
 
 .cta__btn, .cta__btn--purchase, .cta__btn--online {
   font-family: "Noto Serif JP", serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 4.6153846154vw;
   text-align: center;
@@ -263,7 +261,7 @@ ul {
 }
 .cta__btn--online:hover {
   border: #46C4DB solid 2px;
-  padding: 4.1025641026vw 14.358974359vw;
+  padding: 3.8461538462vw 14.358974359vw;
   background-color: #FFF;
   color: #46C4DB;
 }
@@ -277,7 +275,7 @@ ul {
 }
 .cta__btn--purchase:hover {
   border: #5DD5AB solid 2px;
-  padding: 4.1025641026vw 14.358974359vw;
+  padding: 3.8461538462vw 14.358974359vw;
   background-color: #FFF;
   color: #5DD5AB;
 }
@@ -345,7 +343,7 @@ ul {
 
 .concept__title-jp {
   font-family: "Noto Serif JP", serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 6.1538461538vw;
   text-align: center;
@@ -367,7 +365,7 @@ ul {
   font-size: 3.5897435897vw;
   line-height: 2.2857142857;
   color: #FFF;
-  margin-top: 5.1282051282vw;
+  margin-top: 3.5897435897vw;
 }
 @media screen and (min-width: 768px) {
   .concept__text {
@@ -381,7 +379,7 @@ ul {
 /* #concept ここまで */
 /* #voices ここから */
 .voices {
-  height: 146.4102564103vw;
+  height: 133.5897435897vw;
   margin-left: 4.1025641026vw;
   margin-right: 4.1025641026vw;
 }
@@ -414,6 +412,7 @@ ul {
   font-weight: 700;
   font-style: normal;
   font-size: 7.6923076923vw;
+  letter-spacing: 0.05em;
   text-align: center;
   clear: #000;
 }
@@ -500,7 +499,7 @@ ul {
   font-style: normal;
   font-size: 3.5897435897vw;
   line-height: 2;
-  margin: 5.1282051282vw 3.9743589744vw 7.1794871795vw;
+  margin: 4.1025641026vw 3.8461538462vw 6.1538461538vw;
 }
 @media screen and (min-width: 768px) {
   .voices__text {
@@ -546,9 +545,8 @@ ul {
 }
 
 .slick-dots {
-  width: 100%;
+  width: 96%;
   text-align: center;
-  margin-top: 4.1025641026vw;
 }
 @media screen and (min-width: 768px) {
   .slick-dots {
@@ -585,6 +583,9 @@ ul {
 .slick-dots li button:focus {
   outline: none;
 }
+.slick-dots li button {
+  padding-top: 0;
+}
 .slick-dots li.slick-active button:before {
   color: #00AFBF;
 }
@@ -592,11 +593,13 @@ ul {
 /* #voices ここまで */
 /* #faq ここから */
 .faq {
+  height: auto;
   background: linear-gradient(to right, #F4FFE8, #C6F0FE);
 }
 
 .faq__inner {
-  padding: 8.2051282051vw 4.1025641026vw;
+  padding: 8.2051282051vw 4.1025641026vw 0.2564102564vw;
+  margin-bottom: -0.5128205128vw;
 }
 @media screen and (min-width: 768px) {
   .faq__inner {
@@ -615,7 +618,7 @@ ul {
   font-weight: 700;
   font-style: normal;
   font-size: 7.6923076923vw;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-align: center;
   color: #000;
 }
@@ -653,18 +656,20 @@ ul {
   }
 }
 
-.faq__item-question {
+.faq__item-question, .faq__item-question.open {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  row-gap: 5.1282051282vw;
   margin-top: 5.1282051282vw;
-  padding: 5.1282051282vw 4.1025641026vw;
+  padding: 5.1282051282vw 4.1025641026vw 4.6153846154vw;
   background-color: #fff;
   cursor: pointer;
 }
+.faq__item-question.open {
+  padding-bottom: 3.8461538462vw;
+}
 @media screen and (min-width: 768px) {
-  .faq__item-question {
+  .faq__item-question, .faq__item-question.open {
     row-gap: min(2vw, 1.5rem);
     margin-top: min(3.3333333333vw, 2.5rem);
     padding: min(2vw, 1.5rem) min(2vw, 1.5rem);
@@ -687,18 +692,20 @@ ul {
   }
 }
 
-.faq__item-question-text,
-.faq__item-answer-text {
+.faq__item-answer-mark {
+  padding-top: 0.7692307692vw;
+}
+
+.faq__item-question-text {
   font-family: "Noto Serif JP", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 3.8461538462vw;
-  line-height: 1.8666666667;
+  line-height: 1.7;
   margin-left: 3.0769230769vw;
 }
 @media screen and (min-width: 768px) {
-  .faq__item-question-text,
-  .faq__item-answer-text {
+  .faq__item-question-text {
     font-size: min(1.25vw, 0.9375rem);
     line-height: 1.8666666667;
     margin-left: min(1.3333333333vw, 1rem);
@@ -711,9 +718,20 @@ ul {
   }
 }
 
+.faq__item-answer-text {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.8461538462vw;
+  line-height: 1.8666666667;
+  margin-left: 2.5641025641vw;
+}
 @media screen and (min-width: 768px) {
   .faq__item-answer-text {
     width: min(43.1666666667vw, 32.375rem);
+    font-size: min(1.25vw, 0.9375rem);
+    line-height: 1.8666666667;
+    margin-left: min(1.3333333333vw, 1rem);
   }
 }
 
@@ -729,8 +747,8 @@ ul {
 
 .faq__item-question > .faq__item-question-btn {
   margin-top: 2.5641025641vw;
-  margin-left: 4.1025641026vw;
-  width: 3.0769230769vw;
+  margin-left: 1.2820512821vw;
+  width: 5.1282051282vw;
   height: 1.7948717949vw;
   background-image: url("/assets/image/faq_down_01.svg");
 }
@@ -745,9 +763,9 @@ ul {
 
 .faq__item-question.open > .faq__item-question-btn {
   margin-top: 2.5641025641vw;
-  margin-left: 4.1025641026vw;
-  width: 2.5641025641vw;
-  height: 1.5384615385vw;
+  margin-left: 1.5384615385vw;
+  width: 5.1282051282vw;
+  height: 1.7948717949vw;
   background-image: url("/assets/image/faq_up_01.svg");
 }
 @media screen and (min-width: 768px) {
@@ -762,7 +780,7 @@ ul {
 .faq__item-answer, .faq__item-answer--active {
   display: flex;
   margin-bottom: 5.1282051282vw;
-  padding: 0 4.1025641026vw 8.4615384615vw;
+  padding: 0 4.1025641026vw 7.1794871795vw;
   background-color: #fff;
   cursor: pointer;
 }
@@ -795,8 +813,8 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 5.8974358974vw;
-  padding: 5.8974358974vw 11.5384615385vw;
+  row-gap: 5.1282051282vw;
+  padding: 6.1538461538vw 11.5384615385vw 5.1282051282vw;
 }
 @media screen and (min-width: 768px) {
   .footer__inner {
@@ -861,6 +879,7 @@ ul {
   font-style: normal;
   font-size: 2.8205128205vw;
   color: #FFF;
+  padding-top: 0.5128205128vw;
 }
 @media screen and (min-width: 768px) {
   .footer__copyright {

@@ -124,9 +124,9 @@ ul {
 }
 
 // フレーム確認用
-* {
-    outline: 1px solid red;
-}
+// * {
+//     outline: 1px solid red;
+// }
 
 /* ---------------------------------
     共通 ここまで
@@ -196,6 +196,7 @@ ul {
 
 .product {
     margin-top: vw(364);
+    margin-left: vw(7);
     width: vw(343);
     height: vw(139);
 
@@ -261,7 +262,7 @@ ul {
     #cta ここから
 --------------------------------- */
 .cta {
-    margin: vw(50) vw(16);
+    margin: vw(50) vw(16) vw(50);
 
     @include mq(md) {
         margin: mvw(48) mvw(100);
@@ -279,7 +280,7 @@ ul {
     align-items: center;
     row-gap: vw(20);
     padding-top: vw(20);
-    padding-bottom: vw(20);
+    padding-bottom: vw(34);
     background-color: #F0F4FF;
 
     @include mq(md) {
@@ -305,6 +306,7 @@ ul {
 .cta__product-price {
     @include baseFont;
     font-size: vw(14);
+    letter-spacing: 0.1em;
     text-align: center;
     margin-top: vw(5);
 
@@ -315,7 +317,7 @@ ul {
 }
 
 .cta__btn {
-    @include baseFont($semibold);
+    @include baseFont($medium);
     font-size: vw(18);
     text-align: center;
     width: vw(300);
@@ -337,7 +339,7 @@ ul {
 
     &--online:hover {
         border: #46C4DB solid 2px;
-        padding: vw(16) vw(56);
+        padding: vw(15) vw(56);
         background-color: #FFF;
         color: #46C4DB;
 
@@ -353,7 +355,7 @@ ul {
 
     &--purchase:hover {
         border: #5DD5AB solid 2px;
-        padding: vw(16) vw(56);
+        padding: vw(15) vw(56);
         background-color: #FFF;
         color: #5DD5AB;
 
@@ -414,7 +416,7 @@ ul {
 }
 
 .concept__title-jp {
-    @include baseFont($semibold);
+    @include baseFont($medium);
     font-size: vw(24);
     text-align: center;
     color: #FFF;
@@ -432,7 +434,7 @@ ul {
     font-size: vw(14);
     line-height: calc(32/14);
     color: #FFF;
-    margin-top: vw(20);
+    margin-top: vw(14);
 
     @include mq(md) {
         font-size: mvw(14);
@@ -446,7 +448,7 @@ ul {
 
 /* #voices ここから */
 .voices {
-    height: vw(571);
+    height: vw(521);
     margin-left: vw(16);
     margin-right: vw(16);
 
@@ -473,6 +475,7 @@ ul {
 .voices__title-en {
     @include sectionTitleFont;
     font-size: vw(30);
+    letter-spacing: 0.05em;
     text-align: center;
     clear: #000;
 
@@ -547,7 +550,7 @@ ul {
     @include baseFont;
     font-size: vw(14);
     line-height: 2;
-    margin: vw(20) vw(15.5) vw(28);
+    margin: vw(16) vw(15) vw(24);
 
     @include mq(md) {
         font-size: mvw(16);
@@ -588,9 +591,8 @@ ul {
 }
 
 .slick-dots {
-    width: 100%;
+    width: 96%;
     text-align: center;
-    margin-top: vw(16);
 
     @include mq(md) {
         margin: mvw(24) auto 0;
@@ -629,6 +631,10 @@ ul {
         }
     }
 
+    li button {
+        padding-top: 0;
+    }
+
     li.slick-active button:before {
         color: #00AFBF;
     }
@@ -638,13 +644,15 @@ ul {
 
 /* #faq ここから */
 .faq {
+    height: auto;
     background: -moz-linear-gradient(left, #F4FFE8, #C6F0FE);
     background: -webkit-linear-gradient(left, #F4FFE8, #C6F0FE);
     background: linear-gradient(to right, #F4FFE8, #C6F0FE);
 }
 
 .faq__inner {
-    padding: vw(32) vw(16);
+    padding: vw(32) vw(16) vw(1);
+    margin-bottom: vw(-2);
 
     @include mq(md) {
         padding: mvw(40) mvw(300);
@@ -658,7 +666,7 @@ ul {
 .faq__title-en {
     @include sectionTitleFont;
     font-size: vw(30);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-align: center;
     color: #000;
 
@@ -695,11 +703,15 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    row-gap: vw(20);
     margin-top: vw(20);
-    padding: vw(20) vw(16);
+    padding: vw(20) vw(16) vw(18);
     background-color: #fff;
     cursor: pointer;
+
+    &.open {
+        @extend .faq__item-question;
+        padding-bottom: vw(15);
+    }
 
     @include mq(md) {
         row-gap: mvw(24);
@@ -720,11 +732,14 @@ ul {
     }
 }
 
-.faq__item-question-text,
-.faq__item-answer-text {
+.faq__item-answer-mark {
+    padding-top: vw(3);
+}
+
+.faq__item-question-text {
     @include baseFont;
     font-size: vw(15);
-    line-height: calc(28/15);
+    line-height: 1.7;
     margin-left: vw(12);
 
     @include mq(md) {
@@ -741,8 +756,16 @@ ul {
 }
 
 .faq__item-answer-text {
+    @include baseFont;
+    font-size: vw(15);
+    line-height: calc(28/15);
+    margin-left: vw(10);
+
     @include mq(md) {
         width: mvw(518);
+        font-size: mvw(15);
+        line-height: calc(28/15);
+        margin-left: mvw(16);
     }
 }
 
@@ -759,8 +782,8 @@ ul {
 
 .faq__item-question>.faq__item-question-btn {
     margin-top: vw(10);
-    margin-left: vw(16);
-    width: vw(12);
+    margin-left: vw(5);
+    width: vw(20);
     height: vw(7);
     background-image: url("/assets/image/faq_down_01.svg");
 
@@ -774,9 +797,9 @@ ul {
 
 .faq__item-question.open>.faq__item-question-btn {
     margin-top: vw(10);
-    margin-left: vw(16);
-    width: vw(10);
-    height: vw(6);
+    margin-left: vw(6);
+    width: vw(20);
+    height: vw(7);
     background-image: url("/assets/image/faq_up_01.svg");
 
     @include mq(md) {
@@ -790,7 +813,7 @@ ul {
 .faq__item-answer {
     display: flex;
     margin-bottom: vw(20);
-    padding: 0 vw(16) vw(33);
+    padding: 0 vw(16) vw(28);
     background-color: #fff;
     cursor: pointer;
 
@@ -824,8 +847,8 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: vw(23);
-    padding: vw(23) vw(45);
+    row-gap: vw(20);
+    padding: vw(24) vw(45) vw(20);
 
     @include mq(md) {
         display: flex;
@@ -878,6 +901,7 @@ ul {
     @include baseFont;
     font-size: vw(11);
     color: #FFF;
+    padding-top: vw(2);
 
     @include mq(md) {
         font-size: mvw(12);
