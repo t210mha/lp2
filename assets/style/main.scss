@@ -88,7 +88,7 @@ $breakpoints: (
 }
 
 // PC表示コンテンツ幅(1200px)以上の場合の左右の余白
-$pcMargin: calc((100vw - 1200px) / 2
+$pcMargin: calc((100% - 1200px) / 2
 );
 
 // スムーススクロール
@@ -135,6 +135,7 @@ ul {
     #cover ここから
 --------------------------------- */
 .cover {
+    width: 100%;
     height: vw(557);
     background-image: url("/assets/image/main_visual_sp_01.jpg");
     background-size: vw(390) vw(450);
@@ -142,7 +143,6 @@ ul {
     padding: vw(24) vw(16) 0;
 
     @include mq(md) {
-        width: vwPC(1500);
         height: mvw(720);
         background-image: url("/assets/image/main_visual_pc_01.jpg");
         background-size: cover;
@@ -152,7 +152,6 @@ ul {
     }
 
     @include mq(xl) {
-        width: vwPC(1500);
         height: vwPC(720);
         background-image: url("/assets/image/main_visual_pc_01.jpg");
         background-size: 100% auto;
@@ -245,7 +244,8 @@ ul {
     font-size: vw(20);
     text-align: left;
     letter-spacing: 0.3em;
-    margin-top: vw(8);
+    vertical-align: top;
+    margin-top: vw(7);
 
     @include mq(md) {
         font-size: mvw(25);
@@ -389,14 +389,13 @@ ul {
 
 /* #concept ここから */
 .concept {
-    width: vw(390);
+    width: 100%;
     height: vw(680);
     background-image: url("/assets/image/concept_sp_01.jpg");
     background-position: center;
     background-size: cover;
 
     @include mq(md) {
-        width: vwPC(1500);
         height: mvw(550);
         background-image: url("/assets/image/concept_pc_01.jpg");
         background-size: cover;
@@ -405,7 +404,6 @@ ul {
     }
 
     @include mq(lg) {
-        width: vwPC(1500);
         height: mvw(550);
         background-image: url("/assets/image/concept_pc_01.jpg");
         background-size: cover;
@@ -423,10 +421,20 @@ ul {
     }
 }
 
+.concept__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(md) {
+        align-items: flex-start;
+    }
+}
+
 .concept__title-en {
     @include sectionTitleFont;
     font-size: vw(30);
-    text-align: center;
     color: #FFF;
 
     @include mq(md) {
@@ -438,7 +446,6 @@ ul {
 .concept__title-jp {
     @include baseFont($medium);
     font-size: vw(24);
-    text-align: center;
     color: #FFF;
     margin-top: vw(8);
 
@@ -468,28 +475,24 @@ ul {
 
 /* #voices ここから */
 .voices {
-    height: vw(521);
-    margin-left: vw(16);
-    margin-right: vw(16);
+    height: vw(571);
+    padding: vw(50) vw(16);
 
     @include mq(md) {
-        height: mvw(636);
-        margin: 0 mvw(22);
+        height: mvw(716);
+        padding: mvw(80) mvw(22);
     }
 
     @include mq(lg) {
-        margin: 0 calc($pcMargin + mvw(22));
+        padding: mvw(80) calc($pcMargin + mvw(22));
     }
 }
 
-.voices__inner {
-    margin-top: vw(50);
-    margin-bottom: vw(50);
-
-    @include mq(md) {
-        margin-top: mvw(80);
-        margin-bottom: mvw(80);
-    }
+.voices__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .voices__title-en {
@@ -501,7 +504,6 @@ ul {
 
     @include mq(md) {
         font-size: mvw(45);
-        margin-left: mvw(3);
     }
 }
 
@@ -691,6 +693,13 @@ ul {
     }
 }
 
+.faq__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .faq__title-en {
     @include sectionTitleFont;
     font-size: vw(30);
@@ -869,12 +878,11 @@ ul {
 
 /* #footer ここから */
 .footer {
+    width: 100%;
     height: vw(165);
-    width: vw(390);
     background-color: #0071CE;
 
     @include mq(md) {
-        width: vwPC(1500);
         height: mvw(104);
     }
 }
