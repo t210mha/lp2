@@ -27,7 +27,6 @@ $bold: 700;
 // セクションタイトル用フォント
 @mixin sectionTitleFont($weight: $bold) {
     font-family: "EB Garamond", serif;
-    font-optical-sizing: auto;
     font-weight: $weight;
     font-style: normal;
 }
@@ -297,7 +296,7 @@ ul {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: cnter;
+        align-items: center;
         padding: mvw(40) mvw(48);
     }
 }
@@ -493,7 +492,7 @@ ul {
     font-size: vw(30);
     letter-spacing: 0.05em;
     text-align: center;
-    clear: #000;
+    color: #000;
 
     @include mq(md) {
         font-size: mvw(45);
