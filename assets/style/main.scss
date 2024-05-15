@@ -124,7 +124,7 @@ ul {
 
 // 確認用
 * {
-    // outline: 1px solid red;
+    outline: 1px solid red;
 }
 
 /* ---------------------------------
@@ -279,8 +279,15 @@ ul {
     @include mq(lg) {
         margin: mvw(48) calc($pcMargin + mvw(100));
     }
-}
 
+    &.cta--secondary {
+        margin-bottom: vw(10);
+
+        @include mq(md) {
+            margin-bottom: mvw(8);
+        }
+    }
+}
 
 .cta__inner {
     display: flex;
@@ -684,7 +691,7 @@ ul {
 }
 
 .faq__inner {
-    width: vw(358);
+    max-width: vw(358);
     margin: 0 auto;
 
     @include mq(md) {
@@ -738,14 +745,14 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    width: vw(358);
+    max-width: vw(358);
     margin-top: vw(20);
     padding: vw(20) vw(16) vw(18);
     background-color: #fff;
     cursor: pointer;
 
     @include mq(md) {
-        width: mvw(600);
+        max-width: mvw(600);
         row-gap: mvw(20);
         margin-top: mvw(24);
         padding: mvw(24) mvw(24) mvw(19);
@@ -859,14 +866,14 @@ ul {
 
 .faq__item-answer {
     display: flex;
-    width: vw(358);
+    max-width: vw(358);
     margin-bottom: vw(20);
     padding: 0 vw(16) vw(28);
     background-color: #fff;
     cursor: pointer;
 
     @include mq(md) {
-        width: mvw(600);
+        max-width: mvw(600);
         margin-bottom: mvw(20);
         padding: 0 mvw(24) mvw(18);
     }
@@ -878,6 +885,48 @@ ul {
 }
 
 /* #faq ここまで */
+
+/* #back-to-top ここから */
+
+.back-to-top {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: vw(16);
+    position: sticky;
+    bottom: px2Rem(15);
+    left: 0;
+    z-index: 1;
+
+    @include mq(md) {
+        padding-right: mvw(40);
+    }
+
+    @include mq(lg) {
+        padding-right: $pcMargin;
+    }
+}
+
+.back-to-top__link,
+.back-to-top__img {
+
+    width: px2Rem(40);
+    height: px2Rem(40);
+
+}
+
+.back-to-top__img {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.back-to-top__img--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* #back-to-top ここまで */
 
 /* #footer ここから */
 .footer {
@@ -958,33 +1007,3 @@ ul {
 }
 
 /* #footer ここまで */
-
-/* #back-to-top ここから */
-#back-to-top {
-    position: fixed;
-    height: vw(40);
-    right: vw(16);
-    bottom: px2Rem(16);
-
-    @include mq(md) {
-        height: mvw(40);
-        right: mvw(40);
-    }
-
-    @include mq(lg) {
-        right: $pcMargin;
-    }
-}
-
-#back-to-top__link {
-    width: vw(40);
-    height: vw(40);
-}
-
-#back-to-top__img {
-    display: none;
-    width: vw(40);
-    height: vw(40);
-}
-
-/* #back-to-top ここまで */

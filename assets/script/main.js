@@ -43,42 +43,13 @@ $('.faq__item-question').on('click', function (e) {
 
 // トップへ戻るボタン
 $(function () {
-    const pageTop = $("#back-to-top");
-    pageTop.hide(); // 最初はボタンを非表示にする
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
             // 200px以上スクロールしたらボタンをフェードイン
-            pageTop.fadeIn();
+            $('.back-to-top__img').addClass('back-to-top__img--visible');
         } else {
             // 200px以下になったらボタンをフェードアウト
-            pageTop.fadeOut();
-        }
-    });
-    pageTop.click(function () {
-        $("body,html").animate(
-            {
-                scrollTop: 0, // 上から0pxの位置に戻る
-            }, 0
-        );
-        return false;
-    });
-    // フッター手前でストップ
-    $("#back-to-top").hide();
-    $(window).on("scroll", function () {
-        scrollHeight = $(document).height();
-        scrollPosition = $(window).height() + $(window).scrollTop();
-        footHeight = $("footer").innerHeight();
-        if (scrollHeight - scrollPosition <= footHeight) {
-            // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
-            $("#back-to-top").css({
-                position: "absolute",
-                bottom: footHeight,
-            });
-        } else {
-            $("#back-to-top").css({
-                position: "fixed",
-                bottom: "16px",
-            });
+            $('.back-to-top__img').removeClass('back-to-top__img--visible');
         }
     });
 });
