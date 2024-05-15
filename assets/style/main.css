@@ -197,27 +197,19 @@ ul {
 --------------------------------- */
 .cta {
   margin: 12.8205128205vw 4.1025641026vw 12.8205128205vw;
+  height: 66.9230769231vw;
 }
 
 @media screen and (min-width: 768px) {
   .cta {
-    margin: min(4vw, 3rem) min(8.3333333333vw, 6.25rem);
+    margin: min(3.9833333333vw, 2.9875rem) min(8.3333333333vw, 6.25rem);
+    height: min(12.1666666667vw, 9.125rem);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .cta {
     margin: min(4vw, 3rem) calc((100% - 1200px) / 2 + min(8.3333333333vw, 6.25rem));
-  }
-}
-
-#cta2.cta {
-  margin-top: 12.8205128205vw;
-}
-
-@media screen and (min-width: 768px) {
-  #cta2.cta {
-    margin-top: min(3.8333333333vw, 2.875rem);
   }
 }
 
@@ -688,24 +680,30 @@ ul {
 .faq {
   height: auto;
   background: linear-gradient(to right, #F4FFE8, #C6F0FE);
-}
-
-.faq__inner {
-  padding: 8.2051282051vw 4.1025641026vw 0.2564102564vw;
-  margin-bottom: -0.5128205128vw;
+  padding: 8.2051282051vw 4.1025641026vw;
 }
 
 @media screen and (min-width: 768px) {
-  .faq__inner {
-    padding: min(3.3333333333vw, 2.5rem) min(25vw, 18.75rem) min(0.0833333333vw, 0.0625rem);
-    margin-bottom: max(-0.1666666667vw, -0.125rem);
+  .faq {
+    padding: min(3.3333333333vw, 2.5rem) min(25vw, 18.75rem);
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .faq {
+    padding: min(3.3333333333vw, 2.5rem) calc((100% - 1200px) / 2 + min(25vw, 18.75rem));
+  }
+}
+
+.faq__inner {
+  width: 91.7948717949vw;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
   .faq__inner {
-    padding: min(3.3333333333vw, 2.5rem) calc((100% - 1200px) / 2 + min(25vw, 18.75rem)) min(0.25vw, 0.1875rem);
-    margin-bottom: 0;
+    width: min(50vw, 37.5rem);
+    margin: 0 auto;
   }
 }
 
@@ -752,13 +750,11 @@ ul {
 
 .faq__list {
   margin-top: 9.4871794872vw;
-  margin-bottom: 8.4615384615vw;
 }
 
 @media screen and (min-width: 768px) {
   .faq__list {
     margin-top: min(3.3333333333vw, 2.5rem);
-    margin-bottom: min(3.3333333333vw, 2.5rem);
   }
 }
 

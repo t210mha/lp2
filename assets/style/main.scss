@@ -269,9 +269,11 @@ ul {
 --------------------------------- */
 .cta {
     margin: vw(50) vw(16) vw(50);
+    height: vw(261);
 
     @include mq(md) {
-        margin: mvw(48) mvw(100);
+        margin: mvw(47.8) mvw(100);
+        height: mvw(146);
     }
 
     @include mq(lg) {
@@ -279,13 +281,6 @@ ul {
     }
 }
 
-#cta2.cta {
-    margin-top: vw(50);
-
-    @include mq(md) {
-        margin-top: mvw(46);
-    }
-}
 
 .cta__inner {
     display: flex;
@@ -676,20 +671,25 @@ ul {
     background: -moz-linear-gradient(left, #F4FFE8, #C6F0FE);
     background: -webkit-linear-gradient(left, #F4FFE8, #C6F0FE);
     background: linear-gradient(to right, #F4FFE8, #C6F0FE);
-}
 
-.faq__inner {
-    padding: vw(32) vw(16) vw(1);
-    margin-bottom: vw(-2);
+    padding: vw(32) vw(16);
 
     @include mq(md) {
-        padding: mvw(40) mvw(300) mvw(1);
-        margin-bottom: mvw(-2);
+        padding: mvw(40) mvw(300);
     }
 
     @include mq(lg) {
-        padding: mvw(40) calc($pcMargin + mvw(300)) mvw(3);
-        margin-bottom: 0;
+        padding: mvw(40) calc($pcMargin + mvw(300));
+    }
+}
+
+.faq__inner {
+    width: vw(358);
+    margin: 0 auto;
+
+    @include mq(md) {
+        width: mvw(600);
+        margin: 0 auto;
     }
 }
 
@@ -728,11 +728,9 @@ ul {
 
 .faq__list {
     margin-top: vw(37);
-    margin-bottom: vw(33);
 
     @include mq(md) {
         margin-top: mvw(40);
-        margin-bottom: mvw(40);
     }
 }
 
