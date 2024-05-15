@@ -124,7 +124,7 @@ ul {
 
 // 確認用
 * {
-    outline: 1px solid red;
+    // outline: 1px solid red;
 }
 
 /* ---------------------------------
@@ -740,12 +740,14 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    width: vw(358);
     margin-top: vw(20);
     padding: vw(20) vw(16) vw(18);
     background-color: #fff;
     cursor: pointer;
 
     @include mq(md) {
+        width: mvw(600);
         row-gap: mvw(20);
         margin-top: mvw(24);
         padding: mvw(24) mvw(24) mvw(19);
@@ -831,7 +833,7 @@ ul {
     margin-left: vw(5);
     width: vw(20);
     height: vw(7);
-    background-image: url("/assets/image/faq_down_01.svg");
+    object-fit: contain;
 
     @include mq(md) {
         margin-top: mvw(10);
@@ -846,24 +848,27 @@ ul {
     margin-left: vw(6);
     width: vw(20);
     height: vw(7);
-    background-image: url("/assets/image/faq_up_01.svg");
+    object-fit: contain;
+    transform: rotate(180deg);
 
     @include mq(md) {
         margin-top: mvw(10);
         margin-left: mvw(15);
         width: mvw(12);
-        height: mvw(6);
+        height: mvw(7);
     }
 }
 
 .faq__item-answer {
     display: flex;
+    width: vw(358);
     margin-bottom: vw(20);
     padding: 0 vw(16) vw(28);
     background-color: #fff;
     cursor: pointer;
 
     @include mq(md) {
+        width: mvw(600);
         margin-bottom: mvw(20);
         padding: 0 mvw(24) mvw(18);
     }
