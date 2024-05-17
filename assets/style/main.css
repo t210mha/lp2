@@ -29,10 +29,6 @@ ul {
     margin: 0;
 }
 
-* {
-    outline: 1px solid red;
-}
-
 /* ---------------------------------
     共通 ここまで
 --------------------------------- */
@@ -218,7 +214,7 @@ ul {
 }
 
 .cta.cta--secondary {
-    margin-bottom: 2.5641025641vw;
+    margin-bottom: 2.0512820513vw;
 }
 
 @media screen and (min-width: 768px) {
@@ -233,9 +229,19 @@ ul {
     justify-content: flex-start;
     align-items: center;
     row-gap: 5.1282051282vw;
-    padding-top: 5.1282051282vw;
+    padding-top: 5.3846153846vw;
     padding-bottom: 8.7179487179vw;
     background-color: #F0F4FF;
+}
+
+.cta__inner.cta__inner--secondary {
+    padding-top: 4.8717948718vw;
+}
+
+@media screen and (min-width: 768px) {
+    .cta__inner.cta__inner--secondary {
+        padding-top: min(3.3333333333vw, 2.5rem);
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -260,6 +266,10 @@ ul {
 @media screen and (min-width: 768px) {
     .cta__product-title {
         font-size: min(2vw, 1.5rem);
+    }
+
+    .cta__product-title.cta__product-title--secondary {
+        padding-top: min(0.0833333333vw, 0.0625rem);
     }
 }
 
@@ -348,8 +358,12 @@ ul {
     }
 }
 
-/* #cta ここまで */
-/* #concept ここから */
+/* ---------------------------------
+    #cta ここまで
+--------------------------------- */
+/* ---------------------------------
+    #concept ここから
+--------------------------------- */
 .concept {
     width: 100%;
     height: 174.358974359vw;
@@ -453,8 +467,12 @@ ul {
     }
 }
 
-/* #concept ここまで */
-/* #voices ここから */
+/* ---------------------------------
+    #concept ここまで
+--------------------------------- */
+/* ---------------------------------
+    #voices ここから
+--------------------------------- */
 .voices {
     height: 146.4102564103vw;
     padding: 12.8205128205vw 4.1025641026vw;
@@ -478,7 +496,6 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 0.5128205128vw;
 }
 
 .voices__title-en {
@@ -494,6 +511,7 @@ ul {
 @media screen and (min-width: 768px) {
     .voices__title-en {
         font-size: min(3.75vw, 2.8125rem);
+        padding-left: 0.2564102564vw;
     }
 }
 
@@ -510,7 +528,7 @@ ul {
 @media screen and (min-width: 768px) {
     .voices__title-jp {
         font-size: min(1.6666666667vw, 1.25rem);
-        margin-top: min(0.6666666667vw, 0.5rem);
+        margin-top: min(0.5vw, 0.375rem);
         margin-left: min(0.25vw, 0.1875rem);
     }
 }
@@ -524,8 +542,8 @@ ul {
 @media screen and (min-width: 768px) {
     .voices__list {
         margin-top: min(3.3333333333vw, 2.5rem);
-        margin-left: min(6.1666666667vw, 4.625rem);
-        margin-right: min(6.1666666667vw, 4.625rem);
+        width: min(85vw, 63.75rem);
+        margin-inline: auto;
     }
 }
 
@@ -538,7 +556,7 @@ ul {
         width: min(25vw, 18.75rem);
         height: min(32.3333333333vw, 24.25rem);
         margin-left: min(1.5vw, 1.125rem);
-        margin-right: min(1.5vw, 1.125rem);
+        margin-right: min(1.6666666667vw, 1.25rem);
     }
 }
 
@@ -552,7 +570,7 @@ ul {
 
 @media screen and (min-width: 768px) {
     .voices__photo {
-        margin: min(3.3333333333vw, 2.5rem) min(7.9166666667vw, 5.9375rem) 0 min(8.3333333333vw, 6.25rem);
+        margin: min(3.3333333333vw, 2.5rem) min(7.9166666667vw, 5.9375rem) 0 min(8.5vw, 6.375rem);
         width: min(8.3333333333vw, 6.25rem);
         height: min(8.3333333333vw, 6.25rem);
         align-items: center;
@@ -574,7 +592,8 @@ ul {
 @media screen and (min-width: 768px) {
     .voices__name {
         font-size: min(1.25vw, 0.9375rem);
-        margin-top: min(0.75vw, 0.5625rem);
+        padding-top: min(0.6666666667vw, 0.5rem);
+        padding-left: min(0.1666666667vw, 0.125rem);
     }
 }
 
@@ -591,7 +610,7 @@ ul {
     .voices__text {
         font-size: min(1.3333333333vw, 1rem);
         line-height: 1.75;
-        margin: min(1.3333333333vw, 1rem) min(1.5vw, 1.125rem) min(3.3333333333vw, 2.5rem);
+        margin: min(1vw, 0.75rem) min(1.5vw, 1.125rem) min(3.3333333333vw, 2.5rem);
     }
 }
 
@@ -621,7 +640,7 @@ ul {
 
 @media screen and (min-width: 768px) {
     .slick-prev {
-        left: max(-6.1666666667vw, -4.625rem);
+        left: max(-5.6666666667vw, -4.25rem);
     }
 }
 
@@ -631,7 +650,7 @@ ul {
 
 @media screen and (min-width: 768px) {
     .slick-next {
-        right: max(-6.1666666667vw, -4.625rem);
+        right: max(-5.6666666667vw, -4.25rem);
     }
 }
 
@@ -644,6 +663,8 @@ ul {
     .slick-dots {
         width: min(83.1666666667vw, 62.375rem);
         height: min(1.5vw, 1.125rem);
+        padding-top: min(0.1666666667vw, 0.125rem);
+        padding-left: min(1vw, 0.75rem);
     }
 }
 
@@ -658,7 +679,7 @@ ul {
     .slick-dots li {
         height: min(0.8333333333vw, 0.625rem);
         width: min(0.8333333333vw, 0.625rem);
-        margin: min(0.3333333333vw, 0.25rem) min(0.3333333333vw, 0.25rem);
+        margin: min(0.6666666667vw, 0.5rem) min(0.3333333333vw, 0.25rem);
     }
 }
 
@@ -673,7 +694,7 @@ ul {
 
 @media screen and (min-width: 768px) {
     .slick-dots li button::before {
-        font-size: min(0.8333333333vw, 0.625rem);
+        font-size: min(0.9166666667vw, 0.6875rem);
     }
 }
 
@@ -690,8 +711,12 @@ ul {
     color: #00AFBF;
 }
 
-/* #voices ここまで */
-/* #faq ここから */
+/* ---------------------------------
+    #voices ここまで
+--------------------------------- */
+/* ---------------------------------
+    #faq ここから
+--------------------------------- */
 .faq {
     height: auto;
     background: linear-gradient(to right, #F4FFE8, #C6F0FE);
@@ -700,13 +725,13 @@ ul {
 
 @media screen and (min-width: 768px) {
     .faq {
-        padding: min(3.3333333333vw, 2.5rem) min(25vw, 18.75rem);
+        padding: min(3.25vw, 2.4375rem) min(25vw, 18.75rem) min(3.5vw, 2.625rem);
     }
 }
 
 @media screen and (min-width: 1200px) {
     .faq {
-        padding: min(3.3333333333vw, 2.5rem) calc((100% - 1200px) / 2 + min(25vw, 18.75rem));
+        padding: min(3.25vw, 2.4375rem) calc((100% - 1200px) / 2 + min(25vw, 18.75rem)) min(3.5vw, 2.625rem);
     }
 }
 
@@ -737,11 +762,13 @@ ul {
     letter-spacing: 0.04em;
     text-align: center;
     color: #000;
+    padding-left: 0.5128205128vw;
 }
 
 @media screen and (min-width: 768px) {
     .faq__title-en {
         font-size: min(3.75vw, 2.8125rem);
+        padding-left: min(0.25vw, 0.1875rem);
     }
 }
 
@@ -754,12 +781,14 @@ ul {
     text-align: center;
     color: #000;
     margin-top: 1.0256410256vw;
+    padding-left: 0.2564102564vw;
 }
 
 @media screen and (min-width: 768px) {
     .faq__title-jp {
         font-size: min(1.6666666667vw, 1.25rem);
         margin-top: min(0.6666666667vw, 0.5rem);
+        padding-left: min(0.0833333333vw, 0.0625rem);
     }
 }
 
@@ -780,7 +809,7 @@ ul {
     align-items: flex-start;
     max-width: 91.7948717949vw;
     margin-top: 5.1282051282vw;
-    padding: 5.1282051282vw 4.1025641026vw 4.6153846154vw;
+    padding: 4.6153846154vw 4.1025641026vw;
     background-color: #fff;
     cursor: pointer;
 }
@@ -790,20 +819,31 @@ ul {
     .faq__item-question,
     .faq__item-question.open {
         max-width: min(50vw, 37.5rem);
-        row-gap: min(1.6666666667vw, 1.25rem);
-        margin-top: min(2vw, 1.5rem);
+        margin-top: min(2.0833333333vw, 1.5625rem);
         padding: min(2vw, 1.5rem) min(2vw, 1.5rem) min(1.5833333333vw, 1.1875rem);
     }
 }
 
 .faq__item-question.open {
-    padding-bottom: 3.8461538462vw;
+    padding-top: 4.358974359vw;
+    padding-bottom: 3.0769230769vw;
 }
 
 @media screen and (min-width: 768px) {
     .faq__item-question.open {
         margin-top: min(2vw, 1.5rem);
-        padding: min(2vw, 1.5rem) min(2vw, 1.5rem) min(1.5vw, 1.125rem);
+        padding: min(1.9166666667vw, 1.4375rem) min(2vw, 1.5rem) min(1.3333333333vw, 1rem) min(1.9166666667vw, 1.4375rem);
+    }
+}
+
+.faq__item-question--middle {
+    padding-top: 3.8461538462vw;
+}
+
+@media screen and (min-width: 768px) {
+    .faq__item-question--middle {
+        margin-top: min(2vw, 1.5rem);
+        padding-top: min(2vw, 1.5rem);
     }
 }
 
@@ -824,13 +864,24 @@ ul {
     }
 }
 
+.faq__item-question-mark {
+    padding-top: 0.7692307692vw;
+}
+
+@media screen and (min-width: 768px) {
+    .faq__item-question-mark {
+        padding-top: min(0.1666666667vw, 0.125rem);
+        padding-left: min(0.0833333333vw, 0.0625rem);
+    }
+}
+
 .faq__item-answer-mark {
     padding-top: 0.7692307692vw;
 }
 
 @media screen and (min-width: 768px) {
     .faq__item-answer-mark {
-        padding-top: min(0.25vw, 0.1875rem);
+        padding-top: min(0.4166666667vw, 0.3125rem);
     }
 }
 
@@ -839,20 +890,14 @@ ul {
     font-weight: 400;
     font-style: normal;
     font-size: 3.8461538462vw;
-    line-height: 1.7;
+    line-height: 1.8666666667;
     margin-left: 3.0769230769vw;
 }
 
 @media screen and (min-width: 768px) {
     .faq__item-question-text {
         font-size: min(1.25vw, 0.9375rem);
-        line-height: 1.8666666667;
-        margin-left: min(1.3333333333vw, 1rem);
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .faq__item-question-text {
+        margin-left: min(1.1666666667vw, 0.875rem);
         width: min(40.9166666667vw, 30.6875rem);
     }
 }
@@ -871,7 +916,8 @@ ul {
         width: min(43.1666666667vw, 32.375rem);
         font-size: min(1.25vw, 0.9375rem);
         line-height: 1.8666666667;
-        margin-left: min(1.3333333333vw, 1rem);
+        margin-left: min(1.25vw, 0.9375rem);
+        padding-top: min(0.0833333333vw, 0.0625rem);
     }
 }
 
@@ -885,8 +931,8 @@ ul {
     color: #000000;
 }
 
-.faq__item-question>.faq__item-question-btn {
-    margin-top: 2.5641025641vw;
+.faq__item-question-btn {
+    margin-top: 3.3333333333vw;
     margin-left: 1.2820512821vw;
     width: 5.1282051282vw;
     height: 1.7948717949vw;
@@ -895,16 +941,16 @@ ul {
 }
 
 @media screen and (min-width: 768px) {
-    .faq__item-question>.faq__item-question-btn {
+    .faq__item-question-btn {
         margin-top: min(0.8333333333vw, 0.625rem);
-        margin-left: min(1.25vw, 0.9375rem);
+        margin-left: min(1.1666666667vw, 0.875rem);
         width: min(1vw, 0.75rem);
         height: min(0.5833333333vw, 0.4375rem);
     }
 }
 
 .faq__item-question.open>.faq__item-question-btn {
-    margin-top: 2.5641025641vw;
+    margin-top: 3.0769230769vw;
     margin-left: 1.5384615385vw;
     width: 5.1282051282vw;
     height: 1.7948717949vw;
@@ -946,8 +992,12 @@ ul {
     display: flex;
 }
 
-/* #faq ここまで */
-/* #back-to-top ここから */
+/* ---------------------------------
+    #faq ここまで
+--------------------------------- */
+/* ---------------------------------
+    #back-to-top ここから
+--------------------------------- */
 .back-to-top {
     display: flex;
     justify-content: flex-end;
@@ -1000,8 +1050,12 @@ ul {
     visibility: visible;
 }
 
-/* #back-to-top ここまで */
-/* #footer ここから */
+/* ---------------------------------
+    #back-to-top ここまで
+--------------------------------- */
+/* ---------------------------------
+    #footer ここから
+--------------------------------- */
 .footer {
     width: 100%;
     height: 42.3076923077vw;
@@ -1027,9 +1081,9 @@ ul {
     .footer__inner {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        padding: min(2.6666666667vw, 2rem);
+        padding: min(2.6666666667vw, 2rem) min(2.6666666667vw, 2rem) min(2.6666666667vw, 2rem) min(2.6666666667vw, 2rem);
     }
 }
 
@@ -1037,9 +1091,9 @@ ul {
     .footer__inner {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        padding: min(2.6666666667vw, 2rem) calc((100% - 1200px) / 2 + min(2.6666666667vw, 2rem));
+        padding: min(2.6666666667vw, 2rem) calc((100% - 1200px) / 2 + min(2.6666666667vw, 2rem)) min(2.6666666667vw, 2rem) calc((100% - 1200px) / 2 + min(2.6666666667vw, 2rem));
     }
 }
 
@@ -1066,9 +1120,11 @@ ul {
 
 @media screen and (min-width: 768px) {
     .footer__link-list {
-        margin-left: min(4.1666666667vw, 3.125rem);
+        margin-left: min(17.1666666667vw, 12.875rem);
+        margin-right: min(12.5vw, 9.375rem);
         -moz-column-gap: min(2.6666666667vw, 2rem);
         column-gap: min(2.6666666667vw, 2rem);
+        width: min(28.6666666667vw, 21.5rem);
     }
 }
 
@@ -1097,9 +1153,14 @@ ul {
 
 @media screen and (min-width: 768px) {
     .footer__copyright {
-        font-size: min(1vw, 0.75rem);
+        font-size: min(0.9166666667vw, 0.6875rem);
+        letter-spacing: 0.035em;
+        padding-top: min(0.3333333333vw, 0.25rem);
+        padding-left: min(0.6666666667vw, 0.5rem);
     }
 }
 
-/* #footer ここまで */
+/* ---------------------------------
+    #footer ここまで
+--------------------------------- */
 /*# sourceMappingURL=main.css.map */
