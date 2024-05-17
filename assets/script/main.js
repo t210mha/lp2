@@ -46,10 +46,10 @@ $(function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
             // 200px以上スクロールしたらボタンをフェードイン
-            $('.back-to-top__img').addClass('back-to-top__img--visible');
+            $('.back-to-top__link').addClass('back-to-top__link--visible');
         } else {
             // 200px以下になったらボタンをフェードアウト
-            $('.back-to-top__img').removeClass('back-to-top__img--visible');
+            $('.back-to-top__link').removeClass('back-to-top__link--visible');
         }
     });
 });
